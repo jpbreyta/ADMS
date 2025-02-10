@@ -1,28 +1,27 @@
 <?php
-require_once __DIR__ . '/../config/env.php'; 
+$page = isset($_GET['page']) ? $_GET['page'] : 'home';
+$allowed_pages = ['home', 'about', 'contact'];
+
+if (!in_array($page, $allowed_pages)) {
+    $page = 'home';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Bussiness</title>
+    <title>My PHP Website</title>
 </head>
 <body>
-    <header>
-        <nav>
-            
-        </nav>
-    </header>
+    <?php include 'includes/header.php'; ?>
+    
+    <?php include 'includes/navigation.php'; ?>
+    
     <main>
-        <div>
-            <p></p>
-        </div>
+        <?php include "includes/$page.php"; ?>
     </main>
-    <footer>
-        <!-- Footer content goes here -->
-    </footer>
+    
+    <?php include 'includes/footer.php'; ?>
 </body>
 </html>
