@@ -12,16 +12,18 @@ if (!in_array($page, $allowed_pages)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My PHP Website</title>
+    <?php include 'includes/assets.php'; ?>
+
 </head>
 <body>
-    <?php include 'includes/header.php'; ?>
-    
-    <?php include 'includes/navigation.php'; ?>
+    <?php include 'includes/nav.php'; ?>
     
     <main>
-        <?php include "includes/$page.php"; ?>
+        <?php include "$page.php"; ?>
     </main>
     
     <?php include 'includes/footer.php'; ?>
+
+
 </body>
 </html>
